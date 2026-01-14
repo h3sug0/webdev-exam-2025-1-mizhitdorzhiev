@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Языковой центр LangSchool</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="bi bi-globe-europe-africa fs-3 me-2"></i>
+                <span class="fw-bold">LangSchool</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#courses">Программы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tutors">Наставники</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">О центре</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacts">Контакты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cabinet.html">
+                            <i class="bi bi-person-circle"></i> Мой профиль
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resources-map">Ресурсы</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div id="notification-area" class="notification-container"></div>
+
+    <section class="hero-section bg-light py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-3">Освойте языки с LangSchool</h1>
+                    <p class="lead mb-4">Преодолейте языковые барьеры с помощью опытных педагогов, инновационных методик и персонализированного подхода.</p>
+                    <a href="#courses" class="btn btn-success btn-lg">Начать обучение</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/main.jpg" alt="Изучение языков" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">О нашем центре</h2>
+            <p class="text-center text-muted mb-5">LangSchool — это современный образовательный центр с богатым опытом преподавания иностранных языков. Мы создаем условия для эффективного обучения людей всех возрастов и уровней подготовки.</p>
+        </div>
+    </section>
+
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Зачем изучать иностранный язык?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="bi bi-briefcase text-success fs-1 mb-3"></i>
+                            <h5 class="card-title">Профессиональное развитие</h5>
+                            <p class="card-text">Владение иностранными языками расширяет карьерные горизонты и повышает вашу ценность на рынке труда.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="bi bi-cpu text-success fs-1 mb-3"></i>
+                            <h5 class="card-title">Тренировка мышления</h5>
+                            <p class="card-text">Изучение языков развивает память, улучшает концентрацию и усиливает когнитивные функции мозга.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="bi bi-heart text-success fs-1 mb-3"></i>
+                            <h5 class="card-title">Культурное понимание</h5>
+                            <p class="card-text">Язык — ключ к пониманию культуры, традиций и менталитета других народов.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="bi bi-passport text-success fs-1 mb-3"></i>
+                            <h5 class="card-title">Свобода путешествий</h5>
+                            <p class="card-text">Общение на местном языке делает поездки более насыщенными и комфортными.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="bi bi-journal text-success fs-1 mb-3"></i>
+                            <h5 class="card-title">Доступ к информации</h5>
+                            <p class="card-text">Возможность читать научные статьи, книги и смотреть фильмы в оригинале.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Программы</h2>
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <input type="text" id="course-search" class="form-control" placeholder="Поиск по названию, описанию или преподавателю">
+                </div>
+                <div class="col-md-3">
+                    <select id="course-level-filter" class="form-select">
+                        <option value="">Все уровни</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <button id="search-courses" class="btn btn-success w-100">Поиск</button>
+                </div>
+            </div>
+            <div class="row" id="courses-list"></div>
+            <nav id="courses-pagination" class="mt-4">
+                <ul class="pagination justify-content-center"></ul>
+            </nav>
+        </div>
+    </section>
+
+    <section id="tutors" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Наставники</h2>
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <select id="tutor-search-language" class="form-select">
+                        <option value="">Все языки</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <select id="tutor-search-level" class="form-select">
+                        <option value="">Все уровни</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <select id="tutor-search-experience" class="form-select">
+                        <option value="">Любой опыт</option>
+                        <option value="1">1+ лет</option>
+                        <option value="3">3+ лет</option>
+                        <option value="5">5+ лет</option>
+                    </select>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Фото</th>
+                            <th>Имя</th>
+                            <th>Уровень</th>
+                            <th>Языки</th>
+                            <th>Опыт</th>
+                            <th>Стоимость</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tutors-list"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="resources-map" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Ресурсы</h2>
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <input type="text" id="resource-search" class="form-control" placeholder="Поиск по названию или адресу">
+                </div>
+                <div class="col-md-3">
+                    <select id="resource-type-filter" class="form-select">
+                        <option value="">Все типы</option>
+                        <option value="library">Библиотеки</option>
+                        <option value="cafe">Языковые кафе</option>
+                        <option value="education">Образовательные учреждения</option>
+                        <option value="private">Частные центры</option>
+                        <option value="community">Общественные центры</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <button id="search-on-map" class="btn btn-success w-100">Поиск</button>
+                </div>
+            </div>
+            <div id="map" style="height: 500px;"></div>
+        </div>
+    </section>
+
+    <section id="contacts" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="mb-4">Контакты</h2>
+            <p class="lead mb-3">+7 (812) 123-45-67</p>
+            <p class="lead">info@langschool.ru</p>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 LangSchool. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderModalLabel">Оформление заявки в LangSchool</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="orderForm">
+                        <input type="hidden" id="order-id">
+                        <input type="hidden" id="course-id">
+                        <input type="hidden" id="tutor-id">
+
+                        <div class="mb-3">
+                            <label for="course-name" class="form-label">Название программы</label>
+                            <input type="text" class="form-control" id="course-name" readonly>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="teacher-name" class="form-label">Преподаватель</label>
+                            <input type="text" class="form-control" id="teacher-name" readonly>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="date-start" class="form-label">Дата начала</label>
+                            <select class="form-select" id="date-start" required>
+                                <option value="">Выберите дату</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="time-start" class="form-label">Время занятий</label>
+                            <select class="form-select" id="time-start" required disabled>
+                                <option value="">Сначала выберите дату</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="duration-info" class="form-label">Продолжительность программы</label>
+                            <input type="text" class="form-control" id="duration-info" readonly>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="persons" class="form-label">Количество участников</label>
+                            <input type="number" class="form-control" id="persons" min="1" max="20" value="1" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Дополнительные опции</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="early-registration-display" disabled>
+                                <label class="form-check-label" for="early-registration-display">
+                                    Скидка за раннюю регистрацию (-10%)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="group-enrollment-display" disabled>
+                                <label class="form-check-label" for="group-enrollment-display">
+                                    Групповая скидка (-15%)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="intensive-course-display" disabled>
+                                <label class="form-check-label" for="intensive-course-display">
+                                    Интенсивный курс (+20%)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="supplementary">
+                                <label class="form-check-label" for="supplementary">
+                                    Дополнительные материалы (+2000₽/участник)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="personalized">
+                                <label class="form-check-label" for="personalized">
+                                    Индивидуальные занятия (+1500₽/неделя)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="excursions">
+                                <label class="form-check-label" for="excursions">
+                                    Культурные экскурсии (+25%)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="assessment">
+                                <label class="form-check-label" for="assessment">
+                                    Оценка уровня языка (+300₽)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="interactive">
+                                <label class="form-check-label" for="interactive">
+                                    Интерактивная платформа (+50%)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-info">
+                            <h5>Общая стоимость: <span id="total-price">0</span> ₽</h5>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-success" id="submitOrder">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=твой_ключ_яндекс_карт_сюда&lang=ru_RU" type="text/javascript"></script>
+    <script src="js/map.js"></script>
+</body>
+</html>

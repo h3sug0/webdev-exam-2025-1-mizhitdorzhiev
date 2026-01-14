@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой профиль - LangSchool</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-info">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="bi bi-translate fs-3 me-2"></i>
+                <span class="fw-bold">LangSchool</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="cabinet.html">
+                            <i class="bi bi-person-lines-fill"></i> Мой профиль
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div id="alert-container" class="alert-container"></div>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="mb-4">
+                <i class="bi bi-person-lines-fill"></i> Мой профиль
+            </h2>
+
+            <div id="orders-container">
+                <div id="no-orders" class="text-center py-5">
+                    <i class="bi bi-box-seam fs-1 text-muted"></i>
+                    <h4 class="mt-3 text-muted">Нет заявок</h4>
+                    <p class="text-muted">Оформите заявку на главной странице</p>
+                    <a href="index.html" class="btn btn-info mt-3">К программам</a>
+                </div>
+
+                <div id="orders-table-container" style="display: none;">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>№</th>
+                                    <th>Программа</th>
+                                    <th>Дата</th>
+                                    <th>Стоимость</th>
+                                    <th>Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orders-list"></tbody>
+                        </table>
+                    </div>
+
+                    <nav id="orders-pagination" class="mt-4">
+                        <ul class="pagination justify-content-center"></ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>LangSchool</h5>
+                    <p>Центр языкового образования</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Социальные сети</h5>
+                    <a href="#" class="text-white me-3"><i class="bi bi-vk fs-4"></i></a>
+                    <a href="#" class="text-white me-3"><i class="bi bi-telegram fs-4"></i></a>
+                    <a href="#" class="text-white me-3"><i class="bi bi-whatsapp fs-4"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-youtube fs-4"></i></a>
+                </div>
+            </div>
+            <hr class="bg-white">
+            <p class="text-center mb-0">&copy; 2025 LangSchool. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="orderDetailsModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Детали заявки</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="orderDetailsContent"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editOrderModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Редактирование заявки</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editOrderForm">
+                        <input type="hidden" id="edit-order-id">
+                        <input type="hidden" id="edit-course-id">
+                        <div class="mb-3">
+                            <label for="edit-course-name" class="form-label">Название программы</label>
+                            <input type="text" class="form-control" id="edit-course-name" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-teacher-name" class="form-label">Преподаватель</label>
+                            <input type="text" class="form-control" id="edit-teacher-name" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-date-start" class="form-label">Дата начала</label>
+                            <select class="form-select" id="edit-date-start" required>
+                                <option value="">Выберите дату</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-time-start" class="form-label">Время занятий</label>
+                            <select class="form-select" id="edit-time-start" required disabled>
+                                <option value="">Выберите дату сначала</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-duration-info" class="form-label">Продолжительность</label>
+                            <input type="text" class="form-control" id="edit-duration-info" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-persons" class="form-label">Количество участников</label>
+                            <input type="number" class="form-control" id="edit-persons" min="1" max="20" value="1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Дополнительные опции</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="edit-early-registration-display" disabled>
+                                <label class="form-check-label" for="edit-early-registration-display">
+                                    Ранняя регистрация (-10%)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="edit-group-enrollment-display" disabled>
+                                <label class="form-check-label" for="edit-group-enrollment-display">
+                                    Групповая скидка (-15%)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="edit-intensive-course-display" disabled>
+                                <label class="form-check-label" for="edit-intensive-course-display">
+                                    Интенсивный курс (+20%)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="edit-supplementary">
+                                <label class="form-check-label" for="edit-supplementary">
+                                    Доп. материалы (+2000₽/участник)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="edit-personalized">
+                                <label class="form-check-label" for="edit-personalized">
+                                    Индивидуальные занятия (+1500₽/неделя)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="edit-excursions">
+                                <label class="form-check-label" for="edit-excursions">
+                                    Экскурсии (+25%)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="edit-assessment">
+                                <label class="form-check-label" for="edit-assessment">
+                                    Оценка уровня (+300₽)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="edit-interactive">
+                                <label class="form-check-label" for="edit-interactive">
+                                    Интерактивная платформа (+50%)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="alert alert-info">
+                            <h5>Стоимость: <span id="edit-total-price">0</span> ₽</h5>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-info" id="saveEditOrder">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteOrderModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Подтверждение удаления</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Вы уверены, что хотите удалить заявку?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Нет</button>
+                    <button type="button" class="btn btn-danger" id="confirmDelete">Да</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/cabinet.js"></script>
+</body>
+</html>
